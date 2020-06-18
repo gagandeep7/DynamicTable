@@ -8,11 +8,28 @@
   </head>
   <body>
     <div class="main">
-      <input type="text" name="FilterSearch" placeholder="Search....." />
+      <div class="nav">
+        <input type="text" name="FilterSearch" placeholder="Search....." />
+        <select name="RowsNum">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
       <table border="1">
         <thead></thead>
         <tbody></tbody>
       </table>
+      <ul class="pagination-nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
     </div>
 
     <script src="./index.js"></script>

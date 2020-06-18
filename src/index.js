@@ -2,6 +2,9 @@
 const tHead = document.querySelector("table thead");
 const tBody = document.querySelector("table tbody");
 const Input = document.querySelector("input");
+const PaginationNav = document.querySelector(".pagination-nav");
+const SelectRows = document.querySelector("select");
+
 // Heading data
 const Headings = [
   {
@@ -14,6 +17,36 @@ const Headings = [
 // BodyData
 
 const Body = [
+  {
+    name: "Gagan",
+    class: "Btech",
+    RollNo: 7,
+  },
+  {
+    name: "Anuj",
+    class: "Btech",
+    RollNo: 8,
+  },
+  {
+    name: "Akash",
+    class: "Btech",
+    RollNo: 9,
+  },
+  {
+    name: "anon",
+    class: "Btech",
+    RollNo: 17,
+  },
+  {
+    name: "Dhiman",
+    class: "Btech",
+    RollNo: 81,
+  },
+  {
+    name: "Guri",
+    class: "Btech",
+    RollNo: 91,
+  },
   {
     name: "Gagan",
     class: "Btech",
@@ -100,4 +133,19 @@ Input.addEventListener("keyup", (e) => {
       }
     }
   }
+});
+
+// Pagination
+let PAGE_PER_ROW = 2;
+let LiRows;
+SelectRows.addEventListener("change", (e) => {
+  LiRows = "";
+  const TOTAL_ROWS = Object.keys(Body).length;
+  PAGE_PER_ROW = e.target.value;
+  const NO_OF_ROWS = TOTAL_ROWS / PAGE_PER_ROW;
+
+  for (let i = 0; i < NO_OF_ROWS; i++) {
+    LiRows += `<li>${i + 1}</li>`;
+  }
+  PaginationNav.innerHTML = LiRows;
 });

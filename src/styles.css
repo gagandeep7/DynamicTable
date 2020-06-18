@@ -1,3 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
 .main {
   display: flex;
   justify-content: center;
@@ -13,5 +25,25 @@ td {
 
 table {
   width: 500px;
-  margin-top: 2rem;
+  margin: 2rem 0;
+}
+
+.pagination-nav {
+  display: flex;
+  list-style: none;
+  font-size: xx-large;
+  background-color: beige;
+  flex-flow: row nowrap;
+  border-left: saddlebrown 1px solid;
+  align-items: flex-end;
+  width: auto;
+}
+
+.pagination-nav > li {
+  border-right: saddlebrown 1px solid;
+  padding: 0 0.7rem;
+}
+
+.active {
+  background-attachment: blue;
 }
